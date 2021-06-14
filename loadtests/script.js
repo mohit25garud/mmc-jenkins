@@ -17,7 +17,7 @@ export const options = {
 //     },
 //   },
 */
-  thresholds: { http_req_duration: ["p(99)<100"] },
+  thresholds: { http_req_duration: ["max<100"] },
 };
 
 export default function main() {
