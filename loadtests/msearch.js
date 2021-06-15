@@ -15,7 +15,7 @@ export const options = {
 //       },
 //     },
 //   },
-  thresholds: { http_req_duration: ["p(95)<=200"] },
+  thresholds: { http_req_duration: ["p(95)<=500"] },
 };
 
 export default function main() {
@@ -32,6 +32,9 @@ export default function main() {
         Authorization:
             "Basic clpHRzlXYWdnR0V3WU1WNFFqNTU3NU40MDhsOWtBVTU6QlBuZ0hIWnhmVkNPclBIaw==",
         grant_type: "client_credentials",
+        },
+        tags: {
+        my_tag: "MSearch_Generate_Token",
         },
     });
     check(response, {
@@ -51,6 +54,9 @@ export default function main() {
         {
         headers: {
             Authorization: `Bearer ${vars["bearer_token"]}`,
+        },
+        tags: {
+        my_tag: "MarketFinancialData_01_MarketFinancialData",
         },
         }
     );
