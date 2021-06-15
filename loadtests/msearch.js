@@ -5,7 +5,7 @@ import jsonpath from "https://jslib.k6.io/jsonpath/1.0.2/index.js";
 export const options = {
   stages: [
     { duration: "1m", target: 5 },
-    { duration: "3m", target: 5 },
+    { duration: "1m", target: 5 },
     { duration: "1m", target: 0 },
   ],
 //   ext: {
