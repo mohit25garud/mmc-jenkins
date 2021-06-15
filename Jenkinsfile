@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {label 'linux-perf'}
     stages {
         stage('Performance Testing') {
             steps {
