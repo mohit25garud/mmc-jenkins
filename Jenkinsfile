@@ -1,5 +1,6 @@
 pipeline {
     agent any//{label 'linux-perf'}//
+    options {sendSplunkConsoleLog()}
     stages {
         stage('Performance Testing') {
             steps {
