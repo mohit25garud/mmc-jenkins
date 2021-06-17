@@ -17,7 +17,7 @@ export const options = {
 //   },
   thresholds: {
     'http_req_duration{name:MSearch_Generate_Token}': ["p(95)<=200"],
-    'http_req_duration{name:MarketFinancialData_01_MarketFinancialData}': ["p(95)<=400"],
+    'http_req_duration{name:MarketFinancialData_01_MarketFinancialData}': ["p(95)<=300"],
   },
 };
 
