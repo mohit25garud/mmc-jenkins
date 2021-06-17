@@ -15,7 +15,9 @@ export const options = {
 //       },
 //     },
 //   },
-  thresholds: { http_req_duration: ["p(95)<=1500"] },
+  thresholds: { 
+    'http_req_duration{name:MSearch_Generate_Token}': ["p(95)<=200"] },
+    'http_req_duration{name:MarketFinancialData_01_MarketFinancialData}': ["p(95)<=400"] },
 };
 
 export default function main() {
@@ -33,9 +35,7 @@ export default function main() {
             "Basic clpHRzlXYWdnR0V3WU1WNFFqNTU3NU40MDhsOWtBVTU6QlBuZ0hIWnhmVkNPclBIaw==",
         grant_type: "client_credentials",
         },
-        tags: {
-        my_tag: "MSearch_Generate_Token",
-        },
+        tags: {name: "MSearch_Generate_Token"},
     });
     check(response, {
         "body contains access_token": response =>
@@ -55,9 +55,7 @@ export default function main() {
         headers: {
             Authorization: `Bearer ${vars["bearer_token"]}`,
         },
-        tags: {
-        my_tag: "MarketFinancialData_01_MarketFinancialData",
-        },
+        tags: {name: "MarketFinancialData_01_MarketFinancialData"},
         }
     );
     check(response, {
