@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: "Running k6 Test - hello world!"
-          command: "sh 'k6 run loadtests/script.js'"
+          command: "sh 'k6'"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
